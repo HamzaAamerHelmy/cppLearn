@@ -78,8 +78,7 @@ void RunApp()
 
     int position = getIndexOfNumber(numberToSearch, arr, numberOfElements);
 
-    int order = position + 1;
-    printPositionAndOrder(position, numberOfElements, arr, numberToSearch, order);
+    printPositionAndOrder(position, numberOfElements, arr, numberToSearch);
 }
 
 int main()
