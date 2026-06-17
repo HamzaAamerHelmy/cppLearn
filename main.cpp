@@ -46,11 +46,11 @@ int getIndexOfNumber(int numberToSearch, int arr[], int numberOfElements)
 }
 bool isExist(int numberToSearch, int position, int arr[])
 {
-    if (!position >= 0)
+    if (position <= 0)
     {
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }
 void printExist(int position, int numberOfElements, int arr[], int numberToSearch)
 {
