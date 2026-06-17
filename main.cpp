@@ -35,32 +35,36 @@ int readNumberToSearch()
 }
 int getIndexOfNumber(int numberToSearch, int arr[], int numberOfElements)
 {
-    int position = 0;
     for (int i = 0; i < numberOfElements; i++)
     {
         if (arr[i] == numberToSearch)
         {
-            position = i;
-            return position;
+            return i;
         }
     }
     return -1;
 }
-void printPositionAndOrder(int position, int numberOfElements, int arr[], int numberToSearch)
+bool isExist(int numberToSearch, int position, int arr[])
+{
+    if (!position >= 0)
+    {
+        return true;
+    }
+    return false;
+}
+void printExist(int position, int numberOfElements, int arr[], int numberToSearch)
 {
     int orderOfNumber = position + 1;
     cout << "\nNumber you are Looking For is: " << numberToSearch << endl
          << endl;
-    if (position <= 0)
+    if (isExist(numberToSearch, position, arr))
+    {
+        cout << "The Number Is Found :)" << endl;
+    }
+    else
     {
         cout << "The Number Is Not Found :(" << endl;
-        return;
     }
-
-    cout << "The Number Found at position: " << position << endl
-         << endl;
-    cout << "The Number Found it's order: " << orderOfNumber << endl
-         << endl;
 }
 
 void RunApp()
@@ -79,7 +83,7 @@ void RunApp()
 
     int position = getIndexOfNumber(numberToSearch, arr, numberOfElements);
 
-    printPositionAndOrder(position, numberOfElements, arr, numberToSearch);
+    printExist(position, numberOfElements, arr, numberToSearch);
 }
 
 int main()
