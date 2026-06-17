@@ -46,8 +46,9 @@ int getIndexOfNumber(int numberToSearch, int arr[], int numberOfElements)
     }
     return -1;
 }
-void printPositionAndOrder(int position, int numberOfElements, int arr[], int numberToSearch, int orderOfNumber)
+void printPositionAndOrder(int position, int numberOfElements, int arr[], int numberToSearch)
 {
+    int orderOfNumber = position + 1;
     cout << "\nNumber you are Looking For is: " << numberToSearch << endl
          << endl;
     if (position <= 0)
