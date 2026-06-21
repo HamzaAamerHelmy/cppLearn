@@ -20,19 +20,23 @@ void addArrayElement(int arr[], int number, int &arrlength)
     arrlength++;
     arr[arrlength - 1] = number;
 }
-void copyArray(int arr2[], int arr[], int &arr2length, int arrlength)
+void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrlength)
 {
+    int counter = 2;
     for (int i = 0; i < arrlength; i++)
     {
-        addArrayElement(arr2, arr[i], arr2length);
+        if (arr[i] % counter == 0)
+        {
+            continue;
+        }
+        addArrayElement(arr2, arr[i - 2], arr2length);
     }
 }
 void printArray(int arr[], int arrlength)
 {
     for (int i = 0; i < arrlength; i++)
-    {
         cout << arr[i] << " ";
-    }
+
     cout << endl
          << endl;
 }
@@ -48,8 +52,8 @@ void RunApp()
     cout << "Array 1 Elements: " << endl;
     printArray(arr, arrlength);
 
-    copyArray(arr2, arr, arr2length, arrlength);
-    cout << "Array 2 Elements: " << endl;
+    copyPrimeNumbersFromArray(arr2, arr, arr2length, arrlength);
+    cout << "Array 2 Odd Elements: " << endl;
     printArray(arr2, arr2length);
 }
 
