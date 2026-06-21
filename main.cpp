@@ -24,7 +24,7 @@ void copyArray(int arr2[], int arr[], int &arr2length, int arrlength)
 {
     for (int i = 0; i < arrlength; i++)
     {
-        addArrayElement(arr2, arr[i],    arr2length);
+        addArrayElement(arr2, arr[i], arr2length);
     }
 }
 void printArray(int arr[], int arrlength)
