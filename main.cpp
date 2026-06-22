@@ -8,6 +8,7 @@ void readNumberOfElements(int &arrlength)
     cout << "Enter Number Of Elements: ";
     cin >> arrlength;
 }
+
 void fillArrayWithRandomNumbers(int arr[100], int arrlength)
 {
     for (int i = 0; i < arrlength; i++)
@@ -15,11 +16,13 @@ void fillArrayWithRandomNumbers(int arr[100], int arrlength)
         arr[i] = rand() % (100 - 1) + 1;
     }
 }
+
 void addArrayElement(int arr[], int number, int &arrlength)
 {
     arrlength++;
     arr[arrlength - 1] = number;
 }
+
 bool isPrime(int number)
 {
     for (int i = 2; i <= number; i++)
@@ -31,6 +34,7 @@ bool isPrime(int number)
     }
     return true;
 }
+
 void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrlength)
 {
     for (int i = 0; i < arrlength; i++)
@@ -41,6 +45,7 @@ void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrle
         }
     }
 }
+
 void printArray(int arr[], int arrlength)
 {
     for (int i = 0; i < arrlength; i++)
