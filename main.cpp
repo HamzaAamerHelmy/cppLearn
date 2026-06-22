@@ -22,7 +22,7 @@ void addArrayElement(int arr[], int number, int &arrlength)
 }
 bool isPrime(int number)
 {
-    for (int i = 2; i <= number; i++)
+    for (int i = 2; i <= (number / 2); i++)
     {
         if (number % i == 0)
         {
@@ -35,10 +35,12 @@ void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrle
 {
     for (int i = 0; i < arrlength; i++)
     {
-        if (isPrime(arr[i]))
+        if (isPrime(97))
         {
-            addArrayElement(arr2, arr[i - 2], arr2length);
+            addArrayElement(arr2, arr[i], arr2length);
+            return;
         }
+        continue;
     }
 }
 void printArray(int arr[], int arrlength)
