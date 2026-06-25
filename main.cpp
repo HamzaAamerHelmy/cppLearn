@@ -42,7 +42,6 @@ void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrle
         if (isPrime(arr[i]) == true)
         {
             addArrayElement(arr2, arr[i], arr2length);
-            continue;
         }
     }
 }
