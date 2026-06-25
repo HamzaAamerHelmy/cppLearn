@@ -1,12 +1,19 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <thread>
+#include <chrono>
 using namespace std;
 
 void readNumberOfElements(int &arrlength)
 {
     cout << "How many random numbers do you want to generate: ";
     cin >> arrlength;
+}
+
+void readNumbersFromAndTo(int &from, int &to)
+{
+    cout << "";
 }
 
 void fillArrayWithRandomNumbers(int arr[], int arrlength, int from, int to)
@@ -76,6 +83,7 @@ void RunApp()
 
     // Print Origin Array Elemnts
     cout << "\nGenerating " << arrlength << " Random Numbers . . . " << endl;
+    this_thread::sleep_for(chrono::seconds(3));
     printArray(arr, arrlength);
     
     // Extract Prime Numbers From origin Array to new Array
@@ -84,6 +92,7 @@ void RunApp()
     
     // Print Prime's Array
     cout << "\nExtracting Prime Numbers . . . " << endl;
+    this_thread::sleep_for(chrono::seconds(3));
     printArray(arr2, arr2length);
 }
 
