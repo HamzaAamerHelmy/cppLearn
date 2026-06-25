@@ -9,11 +9,11 @@ void readNumberOfElements(int &arrlength)
     cin >> arrlength;
 }
 
-void fillArrayWithRandomNumbers(int arr[100], int arrlength)
+void fillArrayWithRandomNumbers(int arr[100], int arrlength, int from, int to)
 {
     for (int i = 0; i < arrlength; i++)
     {
-        arr[i] = rand() % (100 - 1) + 1;
+        arr[i] = rand() % (to - from) + from;
     }
 }
 
@@ -71,7 +71,7 @@ void RunApp()
     
     // Fill Original Array
     int arr[100];
-    fillArrayWithRandomNumbers(arr, arrlength);
+    fillArrayWithRandomNumbers(arr, arrlength, 21, -1);
 
     // Print Origin Array Elemnts
     cout << "Origin Array Elements: " << endl;
