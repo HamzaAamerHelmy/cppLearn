@@ -71,7 +71,7 @@ void RunApp()
     
     // Fill Original Array
     int arr[100];
-    fillArrayWithRandomNumbers(arr, arrlength, 21, -1);
+    fillArrayWithRandomNumbers(arr, arrlength, 21, 0);
 
     // Print Origin Array Elemnts
     cout << "Origin Array Elements: " << endl;
