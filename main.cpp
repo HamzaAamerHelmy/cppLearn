@@ -27,12 +27,12 @@ bool isPrime(int number)
 {
     for (int i = 2; i <= number; i++)
     {
-        if (number % i != 0)
+        if (number % i == 0)
         {
-            return true;
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrlength)
