@@ -10,26 +10,25 @@ bool isDistinct(int arr[], int arrlen, int numberCheck)
     {
         if (frequency > 1)
         {
-            return true;
+            return false;
         }
         if (numberCheck == arr[i])
         {
             frequency++;
         }
     }
-    return false;
+    return true;
 }
 
 void extractDistinctNumbers(int arr[], int arrlen, int newArr[], int &newArrLen)
 {
-    int number = 0;
     for (int i = 0; i < arrlen; i++)
     {
         if (isDistinct(newArr, arrlen, arr[i]))
         {
-            continue;
+            newArr[i] = arr[i];
+            newArrLen++;
         }
-        newArr[i] = arr[i];
     }
 }
 
