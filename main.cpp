@@ -59,25 +59,31 @@ void printArray(int arr[], int arrlength)
 
 void RunApp()
 {
+    // Seed Random Number Generator
     srand((unsigned)time(NULL));
-    int arr[100], arrlength = 0;
-    int arr2[100], arr2length = 0;
+
+    // Assign Original Array Length
+    int arrlength = 0;
     readNumberOfElements(arrlength);
 
+    // Print Origin Array Length
+    cout << "Origin Arr length: " << arrlength << endl;
     
+    // Fill Original Array
+    int arr[100];
     fillArrayWithRandomNumbers(arr, arrlength);
-    cout << "Array 1 Elements: " << endl;
+
+    // Print Origin Array Elemnts
+    cout << "Origin Array Elements: " << endl;
     printArray(arr, arrlength);
     
+
+    // Extract Prime Numbers From origin Array to new Array
+    int arr2[100], arr2length = 0;
     copyPrimeNumbersFromArray(arr2, arr, arr2length, arrlength);
     
-    cout << arr2length << endl;
-    for (int i = 0; i < arr2length; i++)
-    {
-        cout << arr2[i] << " ";
-    }
-    cout << endl << endl;
-    cout << "Array 2 Prime Elements: " << endl;
+    // Print Prime's Array
+    cout << "Prime's Array Elements: " << endl;
     printArray(arr2, arr2length);
 }
 
