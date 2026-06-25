@@ -25,26 +25,25 @@ void addArrayElement(int arr[], int number, int &arrlength)
 
 bool isPrime(int number)
 {
-    for (int i = 2; i <= (number / 2); i++)
+    for (int i = 2; i <= number; i++)
     {
-        if (number % i == 0)
+        if (number % i != 0)
         {
-            return false;
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrlength)
 {
     for (int i = 0; i < arrlength; i++)
     {
-        if (isPrime(arr[i]))
+        if (isPrime(arr[i]) == true)
         {
             addArrayElement(arr2, arr[i], arr2length);
-            return;
+            continue;
         }
-        continue;
     }
 }
 
@@ -60,7 +59,7 @@ void printArray(int arr[], int arrlength)
 void RunApp()
 {
     srand((unsigned)time(NULL));
-    int arr[100], arrlength;
+    int arr[100], arrlength = 0;
     int arr2[100], arr2length = 0;
     readNumberOfElements(arrlength);
 
@@ -70,6 +69,7 @@ void RunApp()
     cout << "Array 1 Elements: " << endl;
     printArray(arr, arrlength);
 
+    cout << arr2length << endl;
     cout << "Array 2 Prime Elements: " << endl;
     printArray(arr2, arr2length);
 }
