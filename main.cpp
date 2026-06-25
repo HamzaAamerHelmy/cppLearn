@@ -9,7 +9,7 @@ void readNumberOfElements(int &arrlength)
     cin >> arrlength;
 }
 
-void fillArrayWithRandomNumbers(int arr[100], int arrlength, int from, int to)
+void fillArrayWithRandomNumbers(int arr[], int arrlength, int from, int to)
 {
     for (int i = 0; i < arrlength; i++)
     {
@@ -31,6 +31,10 @@ bool isPrime(int number)
         {
             return false;
         }
+    }
+    if (number <= 1)
+    {
+        return false;
     }
     return true;
 }
@@ -70,8 +74,8 @@ void RunApp()
     cout << "Origin Arr length: " << arrlength << endl;
     
     // Fill Original Array
-    int arr[100];
-    fillArrayWithRandomNumbers(arr, arrlength, 21, 0);
+    int arr[arrlength];
+    fillArrayWithRandomNumbers(arr, arrlength, -1, 21);
 
     // Print Origin Array Elemnts
     cout << "Origin Array Elements: " << endl;
