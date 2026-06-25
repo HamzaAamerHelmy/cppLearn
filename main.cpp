@@ -39,7 +39,7 @@ void copyPrimeNumbersFromArray(int arr2[], int arr[], int &arr2length, int arrle
 {
     for (int i = 0; i < arrlength; i++)
     {
-        if (isPrime(arr[i]) == true)
+        if (isPrime(arr[i]))
         {
             addArrayElement(arr2, arr[i], arr2length);
         }
