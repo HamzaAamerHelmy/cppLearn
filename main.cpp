@@ -13,7 +13,10 @@ void readNumberOfElements(int &arrlength)
 
 void readNumbersFromAndTo(int &from, int &to)
 {
-    cout << "";
+    cout << "Enter The Number Will Start From it: ";
+    cin >> from;
+    cout << "Enter the Number Will End From it: ";
+    cin >> to;
 }
 
 void fillArrayWithRandomNumbers(int arr[], int arrlength, int from, int to)
@@ -77,9 +80,12 @@ void RunApp()
     int arrlength = 0;
     readNumberOfElements(arrlength);
 
+    int from, to;
+    readNumbersFromAndTo(from, to);
+
     // Fill Original Array
     int arr[arrlength];
-    fillArrayWithRandomNumbers(arr, arrlength, -1, 21);
+    fillArrayWithRandomNumbers(arr, arrlength, from, to);
 
     // Print Origin Array Elemnts
     cout << "\nGenerating " << arrlength << " Random Numbers . . . " << endl;
