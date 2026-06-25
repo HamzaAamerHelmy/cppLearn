@@ -25,7 +25,7 @@ void addArrayElement(int arr[], int number, int &arrlength)
 
 bool isPrime(int number)
 {
-    for (int i = 2; i <= number; i++)
+    for (int i = 2; i <= (number / 2); i++)
     {
         if (number % i == 0)
         {
