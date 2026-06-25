@@ -5,7 +5,7 @@ using namespace std;
 
 void readNumberOfElements(int &arrlength)
 {
-    cout << "Enter Number Of Elements: ";
+    cout << "How many random numbers do you want to generate: ";
     cin >> arrlength;
 }
 
@@ -70,24 +70,20 @@ void RunApp()
     int arrlength = 0;
     readNumberOfElements(arrlength);
 
-    // Print Origin Array Length
-    cout << "Origin Arr length: " << arrlength << endl;
-    
     // Fill Original Array
     int arr[arrlength];
     fillArrayWithRandomNumbers(arr, arrlength, -1, 21);
 
     // Print Origin Array Elemnts
-    cout << "Origin Array Elements: " << endl;
+    cout << "\nGenerating " << arrlength << " Random Numbers . . . " << endl;
     printArray(arr, arrlength);
     
-
     // Extract Prime Numbers From origin Array to new Array
     int arr2[100], arr2length = 0;
     copyPrimeNumbersFromArray(arr2, arr, arr2length, arrlength);
     
     // Print Prime's Array
-    cout << "Prime's Array Elements: " << endl;
+    cout << "\nExtracting Prime Numbers . . . " << endl;
     printArray(arr2, arr2length);
 }
 
