@@ -54,6 +54,12 @@ void RunApp()
     cout << "Array Distinct Elements: " << endl;
 
     printArray(newArr, newArrLength);
+
+    for (int i = 0; i < arrlength; i++)
+    {
+        cout << isDistinct(newArr, arrlength, arr[i]);
+    }
+    
 }
 
 int main()
