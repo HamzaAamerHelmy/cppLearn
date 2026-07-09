@@ -43,8 +43,8 @@ void printArray(int arr[], int arrlength)
 
 void RunApp()
 {
-    int arr[] = {10, 10, 10, 50, 50, 70, 70, 70, 70, 90, 90, 90, 90, 90};
-    int arrlength = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {10, 10, 10, 50, 50, 70, 70, 70, 70, 90};
+    int arrlength = 10;
     int newArr[] = {};
     int newArrLength = 0;
     cout << "Array Elements: " << endl;
@@ -54,12 +54,6 @@ void RunApp()
     cout << "Array Distinct Elements: " << endl;
 
     printArray(newArr, newArrLength);
-
-    for (int i = 0; i < arrlength; i++)
-    {
-        cout << isDistinct(newArr, arrlength, arr[i]);
-    }
-    
 }
 
 int main()
