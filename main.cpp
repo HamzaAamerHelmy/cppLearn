@@ -8,28 +8,27 @@ bool isDistinct(int arr[], int arrlen, int numberCheck)
     int frequency = 0;
     for (int i = 0; i < arrlen; i++)
     {
-        if (frequency > 1)
-        {
-            return false;
-        }
         if (numberCheck == arr[i])
         {
             frequency++;
+        }
+        
+        if (frequency > 1)
+        {
+            return false;
         }
     }
     return true;
 }
 
-void extractDistinctNumbers(int arr[], int arrlen, int newArr[], int &newArrLen)
+void extractDistinctNumbers(int arr[], int arrlen, int newArr[], int &newArrlength)
 {
-    newArr[0] = arr[0];
-    newArrLen++;
-    for (int i = 1; i < arrlen; i++)
+    for (int i = 0; i < arrlen; i++)
     {
-        if (isDistinct(newArr, arrlen, arr[i]))
+        if (isDistinct(arr, arrlen, arr[i]))
         {
-            newArr[i] = arr[i];
-            newArrLen++;
+            newArr[newArrlength] = arr[i];
+            newArrlength++;
         }
     }
 }
@@ -45,10 +44,11 @@ void printArray(int arr[], int arrlength)
 
 void RunApp()
 {
-    int arr[] = {10, 10, 10, 50, 50, 70, 70, 70, 70, 90};
+    int arr[] = {10, 10, 10, 50, 10, 70, 70, 70, 70, 90};
     int arrlength = 10;
-    int newArr[] = {};
+    int newArr[arrlength];
     int newArrLength = 0;
+
     cout << "Array Elements: " << endl;
     printArray(arr, arrlength);
 
