@@ -3,7 +3,7 @@
 #include <cstdlib>
 using namespace std;
 
-bool isDistinct(int arr[], int arrlen, int numberCheck)
+bool isUnique(int arr[], int arrlen, int numberCheck)
 {
     int frequency = 0;
     for (int i = 0; i < arrlen; i++)
@@ -20,19 +20,29 @@ bool isDistinct(int arr[], int arrlen, int numberCheck)
     }
     return true;
 }
-
+bool isExist(int arr[], int arrlen, int numberCheck)
+{
+    for (int i = 0; i < arrlen; i++)
+    {
+        if (arr[i] == numberCheck)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 void extractDistinctNumbers(int arr[], int arrlen, int newArr[], int &newArrlength)
 {
     for (int i = 0; i < arrlen; i++)
     {
-        if (isDistinct(arr, arrlen, arr[i]))
+        // Add number to new arr if not exist.
+        if (!isExist(newArr, arrlen, arr[i]))
         {
             newArr[newArrlength] = arr[i];
             newArrlength++;
         }
     }
 }
-
 void printArray(int arr[], int arrlength)
 {
     for (int i = 0; i < arrlength; i++)
@@ -41,21 +51,23 @@ void printArray(int arr[], int arrlength)
     cout << endl
          << endl;
 }
+// int arr[] = {10, 10, 10, 50, 50, 70, 70, 70, 70, 90};
+// int arrlength = sizeof(arr) / sizeof(arr[0]);
+// int newArr[arrlength];
+// int newArrLength = 0;
+
+// cout << "Array Elements: " << endl;
+// printArray(arr, arrlength);
+
+// extractDistinctNumbers(arr, arrlength, newArr, newArrLength);
+// cout << "Array Distinct Elements: " << endl;
+
+// printArray(newArr, newArrLength);
+
+
 
 void RunApp()
 {
-    int arr[] = {10, 10, 10, 50, 10, 70, 70, 70, 70, 90};
-    int arrlength = 10;
-    int newArr[arrlength];
-    int newArrLength = 0;
-
-    cout << "Array Elements: " << endl;
-    printArray(arr, arrlength);
-
-    extractDistinctNumbers(arr, arrlength, newArr, newArrLength);
-    cout << "Array Distinct Elements: " << endl;
-
-    printArray(newArr, newArrLength);
 }
 
 int main()
