@@ -22,7 +22,9 @@ bool isDistinct(int arr[], int arrlen, int numberCheck)
 
 void extractDistinctNumbers(int arr[], int arrlen, int newArr[], int &newArrLen)
 {
-    for (int i = 0; i < arrlen; i++)
+    newArr[0] = arr[0];
+    newArrLen++;
+    for (int i = 1; i < arrlen; i++)
     {
         if (isDistinct(newArr, arrlen, arr[i]))
         {
