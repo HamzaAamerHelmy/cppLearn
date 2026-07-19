@@ -118,11 +118,12 @@ void RunApp()
     int arrlen = sizeof(arr) / sizeof(arr[0]);
 
     int newArr[arrlen];
+    fillNewArrayWithReverse(arr, arrlen, newArr);
+
     
     cout << "Array elements: " << endl;
     printArray(arr, arrlen);
     
-    fillNewArrayWithReverse(arr, arrlen, newArr);
     printPalindrome(arr, arrlen, newArr);
 }
 
