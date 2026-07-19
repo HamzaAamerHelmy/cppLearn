@@ -12,7 +12,7 @@ bool isUnique(int arr[], int arrlen, int numberCheck)
         {
             frequency++;
         }
-        
+
         if (frequency > 1)
         {
             return false;
@@ -48,8 +48,7 @@ void printArray(int arr[], int arrlength)
     for (int i = 0; i < arrlength; i++)
         cout << arr[i] << " ";
 
-    cout << endl
-         << endl;
+    cout << endl;
 }
 // int arr[] = {10, 10, 10, 50, 50, 70, 70, 70, 70, 90};
 // int arrlength = sizeof(arr) / sizeof(arr[0]);
@@ -64,10 +63,67 @@ void printArray(int arr[], int arrlength)
 
 // printArray(newArr, newArrLength);
 
+void fillNewArrayWithReverse(int arr[], int arrlen, int newArr[])
+{
+    int counter = arrlen - 1;
+    for (int i = 0; i < arrlen; i++)
+    {
+        newArr[i] = arr[counter];
+        counter--;
+    }
+}
+bool isPalindrome(int arr[], int arrlen, int newArr[])
+{
+    for (int i = 0; i < arrlen; i++)
+    {
+        if (newArr[i] == arr[i])
+        {
+            continue;
+        }
+        return false;
+    }
+    return true;
+}
+void printPalindrome(int arr[], int arrlen, int newArr[])
+{
+    if (isPalindrome(arr, arrlen, newArr))
+    {
+        cout << "\n\nYes array is Palindrome\n\n";
+        cout << "******************************" << endl;
+        cout << "Array before Reverse: ";
+        printArray(arr, arrlen);
 
+        cout << "\nArray after Reverse: ";
+        printArray(newArr, arrlen);
+
+        cout << "******************************" << endl;
+    }
+    else
+    {
+        cout << "\n\nNo array isn't Palindrome\n\n";
+        cout << "******************************" << endl;
+        cout << "Array before Reverse: ";
+        printArray(arr, arrlen);
+
+        cout << "\nArray after Reverse: ";
+        printArray(newArr, arrlen);
+        cout << "******************************" << endl;
+    }
+    
+}
 
 void RunApp()
 {
+    int arr[] = {10, 20, 30, 30, 20, 10};
+    int arrlen = sizeof(arr) / sizeof(arr[0]);
+
+    int newArr[arrlen];
+    
+    cout << "Array elements: " << endl;
+    printArray(arr, arrlen);
+    
+    fillNewArrayWithReverse(arr, arrlen, newArr);
+    printPalindrome(arr, arrlen, newArr);
 }
 
 int main()
