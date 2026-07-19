@@ -63,6 +63,54 @@ void printArray(int arr[], int arrlength)
 
 // printArray(newArr, newArrLength);
 
+void readNumberOfElements(int &numOfElements)
+{
+    int userInput = 0;
+    int tries = 2;
+    do
+    {
+        
+        cout << "How Elements do you want to enter(max 20): ";
+        cin >> userInput;
+        cout << endl;
+
+        if (userInput > 20)
+        {
+            tries--;
+            if (tries == 0)
+            {
+                cout << "You finished your tries :(" << endl;
+                break;
+            }
+            
+            cout << "Try Again!" << endl;
+            cout << "Please enter a valid Number.." << endl;
+            continue;
+        }
+        numOfElements = userInput;
+        return;
+    } while (tries > 0 || userInput > 20);
+}
+
+void readArray(int arr[], int arrlen)
+{
+    string px = "";
+    cout << "Enter Elements Of Array" << endl << endl;
+    for (int i = 0; i < arrlen; i++)
+    {
+        if (i < 9)
+        {
+            px = "0";
+        }
+        else
+        {
+            px = "";
+        }
+        cout << "Element[" << px << i+1 << "] : ";
+        cin >> arr[i];
+    }
+    cout << endl;
+}
 void fillNewArrayWithReverse(int arr[], int arrlen, int newArr[])
 {
     int counter = arrlen - 1;
@@ -84,46 +132,51 @@ bool isPalindrome(int arr[], int arrlen, int newArr[])
     }
     return true;
 }
+void printArrays(int arr[], int arrlen, int newArr[])
+{
+    cout << "(Palindrome is number that when read from left it's equal to read from right)" << endl;
+    cout << "******************************" << endl;
+    cout << "Array from left: ";
+    printArray(arr, arrlen);
+
+    cout << "\nArray from right: ";
+    printArray(newArr, arrlen);
+    cout << "******************************" << endl;
+}
 void printPalindrome(int arr[], int arrlen, int newArr[])
 {
     if (isPalindrome(arr, arrlen, newArr))
     {
         cout << "\n\nYes array is Palindrome\n\n";
-        cout << "******************************" << endl;
-        cout << "Array before Reverse: ";
-        printArray(arr, arrlen);
-
-        cout << "\nArray after Reverse: ";
-        printArray(newArr, arrlen);
-
-        cout << "******************************" << endl;
+        printArrays(arr, arrlen, newArr);
     }
     else
     {
         cout << "\n\nNo array isn't Palindrome\n\n";
-        cout << "******************************" << endl;
-        cout << "Array before Reverse: ";
-        printArray(arr, arrlen);
-
-        cout << "\nArray after Reverse: ";
-        printArray(newArr, arrlen);
-        cout << "******************************" << endl;
+        printArrays(arr, arrlen, newArr);
     }
-    
 }
 
 void RunApp()
 {
-    int arr[] = {10, 20, 30, 30, 20, 10};
-    int arrlen = sizeof(arr) / sizeof(arr[0]);
+    int arrlen = 0;
+    
+    readNumberOfElements(arrlen);
+    if (arrlen == 0)
+    {
+        return;
+    }
+    
+
+    int arr[arrlen];
+    readArray(arr, arrlen);
 
     int newArr[arrlen];
     fillNewArrayWithReverse(arr, arrlen, newArr);
 
-    
     cout << "Array elements: " << endl;
     printArray(arr, arrlen);
-    
+
     printPalindrome(arr, arrlen, newArr);
 }
 
