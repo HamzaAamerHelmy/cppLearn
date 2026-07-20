@@ -36,7 +36,7 @@ void extractDistinctNumbers(int arr[], int arrlen, int newArr[], int &newArrleng
     for (int i = 0; i < arrlen; i++)
     {
         // Add number to new arr if not exist.
-        if (!isExist(newArr, arrlen, arr[i]))
+        if (!isExist(newArr, newArrlength, arr[i]))
         {
             newArr[newArrlength] = arr[i];
             newArrlength++;
@@ -69,7 +69,7 @@ void readNumberOfElements(int &numOfElements)
     int tries = 2;
     do
     {
-        
+
         cout << "How Elements do you want to enter(max 20): ";
         cin >> userInput;
         cout << endl;
@@ -82,7 +82,7 @@ void readNumberOfElements(int &numOfElements)
                 cout << "You finished your tries :(" << endl;
                 break;
             }
-            
+
             cout << "Try Again!" << endl;
             cout << "Please enter a valid Number.." << endl;
             continue;
@@ -92,11 +92,13 @@ void readNumberOfElements(int &numOfElements)
     } while (tries > 0 || userInput > 20);
 }
 
-void readArray(int arr[], int arrlen)
+void readArray(int arr[], int size, int &arrlen)
 {
+    bool userInput = 0;
     string px = "";
-    cout << "Enter Elements Of Array" << endl << endl;
-    for (int i = 0; i < arrlen; i++)
+    cout << "Enter Elements Of Array" << endl
+         << endl;
+    for (int i = 0; i < size; i++)
     {
         if (i < 9)
         {
@@ -106,8 +108,23 @@ void readArray(int arr[], int arrlen)
         {
             px = "";
         }
-        cout << "Element[" << px << i+1 << "] : ";
+        cout << "Element[" << px << i + 1 << "] : ";
         cin >> arr[i];
+        cout << "Do you want to stop reading array(yes : any key, no : 0): ";
+        cin >> userInput;
+        cout << endl;
+
+        if (userInput == false)
+        {
+            arrlen++;
+            continue;
+        }
+        else
+        {
+            arrlen++;
+            return;
+        }
+        
     }
     cout << endl;
 }
@@ -159,25 +176,26 @@ void printPalindrome(int arr[], int arrlen, int newArr[])
 
 void RunApp()
 {
-    int arrlen = 0;
-    
-    readNumberOfElements(arrlen);
-    if (arrlen == 0)
+    int elementsUserEnter = 0;
+    int sizeOfArray = 0;
+
+    readNumberOfElements(sizeOfArray);
+    if (sizeOfArray == 0)
     {
         return;
     }
-    
 
-    int arr[arrlen];
-    readArray(arr, arrlen);
+    int arr[sizeOfArray];
 
-    int newArr[arrlen];
-    fillNewArrayWithReverse(arr, arrlen, newArr);
+    readArray(arr, sizeOfArray, elementsUserEnter);
+
+    int newArr[elementsUserEnter];
+    fillNewArrayWithReverse(arr, elementsUserEnter, newArr);
 
     cout << "Array elements: " << endl;
-    printArray(arr, arrlen);
+    printArray(arr, elementsUserEnter);
 
-    printPalindrome(arr, arrlen, newArr);
+    printPalindrome(arr, elementsUserEnter, newArr);
 }
 
 int main()
