@@ -94,7 +94,7 @@ void readNumberOfElements(int &numOfElements)
 
 void readArray(int arr[], int size, int &arrlen)
 {
-    bool userInput = 0;
+    string userInput = "";
     string px = "";
     cout << "Enter Elements Of Array" << endl
          << endl;
@@ -114,7 +114,7 @@ void readArray(int arr[], int size, int &arrlen)
         cin >> userInput;
         cout << endl;
 
-        if (userInput == false)
+        if (userInput == "0")
         {
             arrlen++;
             continue;
@@ -124,7 +124,6 @@ void readArray(int arr[], int size, int &arrlen)
             arrlen++;
             return;
         }
-        
     }
     cout << endl;
 }
@@ -174,28 +173,30 @@ void printPalindrome(int arr[], int arrlen, int newArr[])
     }
 }
 
+    // int elementsUserEnter = 0;
+    // int sizeOfArray = 0;
+
+    // readNumberOfElements(sizeOfArray);
+    // if (sizeOfArray == 0)
+    // {
+    //     return;
+    // }
+
+    // int arr[sizeOfArray];
+
+    // readArray(arr, sizeOfArray, elementsUserEnter);
+
+    // int newArr[elementsUserEnter];
+    // fillNewArrayWithReverse(arr, elementsUserEnter, newArr);
+
+    // cout << "Array elements: " << endl;
+    // printArray(arr, elementsUserEnter);
+
+    // printPalindrome(arr, elementsUserEnter, newArr);
+
+
 void RunApp()
 {
-    int elementsUserEnter = 0;
-    int sizeOfArray = 0;
-
-    readNumberOfElements(sizeOfArray);
-    if (sizeOfArray == 0)
-    {
-        return;
-    }
-
-    int arr[sizeOfArray];
-
-    readArray(arr, sizeOfArray, elementsUserEnter);
-
-    int newArr[elementsUserEnter];
-    fillNewArrayWithReverse(arr, elementsUserEnter, newArr);
-
-    cout << "Array elements: " << endl;
-    printArray(arr, elementsUserEnter);
-
-    printPalindrome(arr, elementsUserEnter, newArr);
 }
 
 int main()
