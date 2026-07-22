@@ -234,6 +234,13 @@ void printFrequency(int frequency)
 // int frequency = getFrequencyOfPositiveNumbers(arr, arrlen);
 // printFrequency(frequency);
 
+void readNumber(float &number)
+{
+    cout << "Enter The Number: ";
+    cin >> number;
+}
+
+
 float myAbs(float number)
 {
     float positiveNumber = number - (number * 2);
@@ -244,21 +251,16 @@ float myAbs(float number)
 
     return positiveNumber;
 }
+// float number = 0;
 // readNumber(number);
 // cout << "C++ abs function result: " << abs(number) << endl;
 // cout << "My abs function result: " << myAbs(number) << endl;
-void readNumber(float &number)
-{
-    cout << "Enter The Number: ";
-    cin >> number;
-}
 
 float getFractionPart(float number)
 {
     float fractionPart = number - int(number);
     return fractionPart;
 }
-
 int myRound(float number)
 {
     int newNumber = 0;
@@ -273,13 +275,15 @@ int myRound(float number)
         return number;
     }
 }
+// float number = 0;
+// readNumber(number);
+// cout << "C++ round function result: " << round(number) << endl;
+// cout << "My round function result: " << myRound(number) << endl;
 
 void RunApp()
 {
     float number = 0;
     readNumber(number);
-    cout << "C++ round function result: " << round(number) << endl;
-    cout << "My round function result: " << myRound(number) << endl;
 }
 
 int main()
