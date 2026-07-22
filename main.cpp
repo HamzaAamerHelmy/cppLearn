@@ -266,9 +266,9 @@ float myRound(float fractionNumber)
 void RunApp()
 {
     float number = 0;
-    // readNumber(number);
-    // cout << "C++ round function result: " << abs(number) << endl;
-    // cout << "My round function result: " << myAbs(number) << endl;
+    readNumber(number);
+    cout << "C++ round function result: " << abs(number) << endl;
+    cout << "My round function result: " << myAbs(number) << endl;
 }
 
 int main()
