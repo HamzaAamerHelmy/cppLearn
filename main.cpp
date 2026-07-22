@@ -240,7 +240,6 @@ void readNumber(float &number)
     cin >> number;
 }
 
-
 float myAbs(float number)
 {
     float positiveNumber = number - (number * 2);
@@ -280,10 +279,28 @@ int myRound(float number)
 // cout << "C++ round function result: " << round(number) << endl;
 // cout << "My round function result: " << myRound(number) << endl;
 
+float myfloor(float number)
+{
+    int intPart = int(number);
+
+    if (intPart < 0)
+    {
+        if (number == intPart)
+        {
+            return intPart;
+        }
+        return intPart - 1;
+    }
+    
+    return intPart;
+}
+
 void RunApp()
 {
     float number = 0;
     readNumber(number);
+    cout << "C++ floor function result: " << floor(number) << endl;
+    cout << "My floor function result: " << myfloor(number) << endl;
 }
 
 int main()
