@@ -291,16 +291,57 @@ float myfloor(float number)
         }
         return intPart - 1;
     }
-    
+
     return intPart;
+
+    if (int(number) > 0)
+    {
+        return int(number);
+    }
+    else
+    {
+        return int(number) - 1;
+    }
+}
+// float number = 0;
+// readNumber(number);
+// cout << "C++ floor function result: " << floor(number) << endl;
+// cout << "My floor function result: " << myfloor(number) << endl;
+
+float myceil(float number)
+{
+    int intPart = int(number);
+
+    if (intPart < 0)
+    {
+        return intPart;
+    }
+
+    if (number != intPart)
+    {
+        return intPart + 1;
+    }
+
+    return intPart;
+}
+// float number = 0;
+// readNumber(number);
+// cout << "C++ Ceil function result: " << ceil(number) << endl;
+// cout << "My Ceil function result: " << myceil(number) << endl;
+
+int mysqrt(int number)
+{
+    int halfNumber = number / 2;
+
+    int newNumber = pow(halfNumber, 2);
 }
 
 void RunApp()
 {
     float number = 0;
     readNumber(number);
-    cout << "C++ floor function result: " << floor(number) << endl;
-    cout << "My floor function result: " << myfloor(number) << endl;
+    cout << "C++ sqrt function result: " << sqrt(number) << endl;
+    cout << "My sqrt function result: " << mysqrt(number) << endl;
 }
 
 int main()
