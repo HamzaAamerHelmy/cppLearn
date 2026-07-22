@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <cmath>
 using namespace std;
 
 bool isUnique(int arr[], int arrlen, int numberCheck)
@@ -91,7 +92,6 @@ void readNumberOfElements(int &numOfElements)
         return;
     } while (tries > 0 || userInput > 20);
 }
-
 void readArray(int arr[], int size, int &arrlen)
 {
     string userInput = "";
@@ -173,30 +173,102 @@ void printPalindrome(int arr[], int arrlen, int newArr[])
     }
 }
 
-    // int elementsUserEnter = 0;
-    // int sizeOfArray = 0;
+// int elementsUserEnter = 0;
+// int sizeOfArray = 0;
 
-    // readNumberOfElements(sizeOfArray);
-    // if (sizeOfArray == 0)
-    // {
-    //     return;
-    // }
+// readNumberOfElements(sizeOfArray);
+// if (sizeOfArray == 0)
+// {
+//     return;
+// }
 
-    // int arr[sizeOfArray];
+// int arr[sizeOfArray];
 
-    // readArray(arr, sizeOfArray, elementsUserEnter);
+// readArray(arr, sizeOfArray, elementsUserEnter);
 
-    // int newArr[elementsUserEnter];
-    // fillNewArrayWithReverse(arr, elementsUserEnter, newArr);
+// int newArr[elementsUserEnter];
+// fillNewArrayWithReverse(arr, elementsUserEnter, newArr);
 
-    // cout << "Array elements: " << endl;
-    // printArray(arr, elementsUserEnter);
+// cout << "Array elements: " << endl;
+// printArray(arr, elementsUserEnter);
 
-    // printPalindrome(arr, elementsUserEnter, newArr);
+// printPalindrome(arr, elementsUserEnter, newArr);
 
+void readNumberOfElementsInArray(int &numOfElements)
+{
+    cout << "Enter Number Of Elements: ";
+    cin >> numOfElements;
+}
+void fillArrayWithRandomNumbers(int arr[], int arrlen)
+{
+    for (int i = 0; i < arrlen; i++)
+    {
+        arr[i] = rand() % (100 - -100) + -100;
+    }
+}
+int getFrequencyOfPositiveNumbers(int arr[], int arrlen)
+{
+    int frequency = 0;
+    for (int i = 0; i < arrlen; i++)
+    {
+        if (arr[i] < 0)
+        {
+            frequency++;
+        }
+    }
+    return frequency;
+}
+void printFrequency(int frequency)
+{
+    cout << "Positive Numbers Count is " << frequency << endl;
+}
+// srand((unsigned)time(NULL));
+// int arrlen = 0;
+// readNumberOfElementsInArray(arrlen);
+
+// int arr[arrlen];
+
+// fillArrayWithRandomNumbers(arr, arrlen);
+
+// printArray(arr, arrlen);
+// int frequency = getFrequencyOfPositiveNumbers(arr, arrlen);
+// printFrequency(frequency);
+
+float myAbs(float number)
+{
+    float positiveNumber = number - (number * 2);
+    if (number >= 0)
+    {
+        return number;
+    }
+
+    return positiveNumber;
+}
+// readNumber(number);
+// cout << "C++ abs function result: " << abs(number) << endl;
+// cout << "My abs function result: " << myAbs(number) << endl;
+void readNumber(float &number)
+{
+    cout << "Enter The Number: ";
+    cin >> number;
+}
+
+float getFractionNumber(float number)
+{
+    float fractionPart = number - int(number);
+    return fractionPart;
+}
+
+float myRound(float fractionNumber)
+{
+}
 
 void RunApp()
 {
+    float number = 0;
+    // readNumber(number);
+    // cout << "C++ round function result: " << abs(number) << endl;
+    // cout << "My round function result: " << myAbs(number) << endl;
 }
 
 int main()
