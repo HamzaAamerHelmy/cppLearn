@@ -253,22 +253,33 @@ void readNumber(float &number)
     cin >> number;
 }
 
-float getFractionNumber(float number)
+float getFractionPart(float number)
 {
     float fractionPart = number - int(number);
     return fractionPart;
 }
 
-float myRound(float fractionNumber)
+int myRound(float number)
 {
+    int newNumber = 0;
+    float fractionPart = getFractionPart(number);
+    if (fractionPart > 0.5 || fractionPart < -0.5)
+    {
+        newNumber = number - 1;
+        return newNumber;
+    }
+    else
+    {
+        return number;
+    }
 }
 
 void RunApp()
 {
     float number = 0;
     readNumber(number);
-    cout << "C++ round function result: " << abs(number) << endl;
-    cout << "My round function result: " << myAbs(number) << endl;
+    cout << "C++ round function result: " << round(number) << endl;
+    cout << "My round function result: " << myRound(number) << endl;
 }
 
 int main()
