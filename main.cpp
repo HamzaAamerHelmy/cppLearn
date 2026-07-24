@@ -329,11 +329,9 @@ float myceil(float number)
 // cout << "C++ Ceil function result: " << ceil(number) << endl;
 // cout << "My Ceil function result: " << myceil(number) << endl;
 
-int mysqrt(int number)
+float mysqrt(int number)
 {
-    int halfNumber = number / 2;
-
-    int newNumber = pow(halfNumber, 2);
+    return pow(number, 0.5);
 }
 
 void RunApp()
